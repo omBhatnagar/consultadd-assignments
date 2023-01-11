@@ -1,0 +1,16 @@
+h1 {
+	text-align: center;
+}
+
+button {
+	padding: 1.2rem 1.2rem;
+}
+
+#grid {
+	align-content: center;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	text-align: center;
+	align-content: center;
+	gap: 0;
+}
