@@ -1,0 +1,17 @@
+<h1>Calculator</h1>
+<select name="userCurrency" [(ngModel)]="userCurrency">
+  <option value="" disabled selected>Currency to convert from</option>
+  <option *ngFor="let currency of currencies">{{ currency }}</option>
+</select>
+<input type="text" placeholder="Enter Value" [(ngModel)]="calcValue" />
+<select
+  name="finalCurrency"
+  [(ngModel)]="finalCurrency"
+  placeholder="Target Currency"
+>
+  <option value="" disabled selected>Target currency</option>
+  <option *ngFor="let currency of currencies">{{ currency }}</option>
+</select>
+<button (click)="changeCurrency()">Change Currency</button>
+<h2>Converted value is: {{ finalValue }}</h2>
+<app-fetch-json-placeholder></app-fetch-json-placeholder>

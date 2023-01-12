@@ -1,0 +1,11 @@
+<button (click)="fetchClick()">Click me to fetch posts!</button>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+  </tr>
+  <tr *ngFor="let post of json">
+    <td>{{ post.title }}</td>
+    <td>{{ post.body }}</td>
+  </tr>
+</table>
