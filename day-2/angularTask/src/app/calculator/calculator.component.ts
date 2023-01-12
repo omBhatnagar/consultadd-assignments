@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { FetchJsonPlaceholderComponent } from '../fetch-json-placeholder/fetch-json-placeholder.component';
 
 @Component({
   selector: 'app-calculator',
@@ -9,7 +10,7 @@ export class CalculatorComponent {
   public calcValue: any;
   public userCurrency: string = '';
   public finalCurrency: string = '';
-  public finalValue: any;
+  public finalValue: number = 0;
   public currencies = ['USD', 'INR', 'EUR', 'JPY', 'GBP'];
   public rates: any = {
     USD: {
@@ -31,19 +32,27 @@ export class CalculatorComponent {
       GBP: 0.0063,
     },
   };
+
+  @ViewChild(FetchJsonPlaceholderComponent, { static: true })
+  child!: FetchJsonPlaceholderComponent;
+
+  fetchClick() {
+    this.child.fetchClick();
+  }
+
   changeCurrency() {
     if (this.userCurrency === 'GBP') {
       let rate = this.rates[this.finalCurrency][this.userCurrency];
-      return (this.finalValue = this.calcValue / rate);
+      return (this.finalValue = parseFloat(this.calcValue) / rate);
     }
     if (
       Object.keys(this.rates[this.userCurrency]).indexOf(this.finalCurrency) ==
       -1
     ) {
       let rate = this.rates[this.finalCurrency][this.userCurrency];
-      return (this.finalValue = this.calcValue / rate);
+      return (this.finalValue = parseFloat(this.calcValue) / rate);
     }
     let rate = this.rates[this.userCurrency][this.finalCurrency];
-    return (this.finalValue = this.calcValue * rate);
+    return (this.finalValue = parseFloat(this.calcValue) * rate);
   }
 }
