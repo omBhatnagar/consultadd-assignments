@@ -1,0 +1,12 @@
+.radio-wrapper {
+  width: 80vh;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.radio-input {
+  width: full;
+  margin: auto;
+  font-size: 1.2rem;
+}

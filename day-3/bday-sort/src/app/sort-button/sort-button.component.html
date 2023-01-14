@@ -1,0 +1,22 @@
+<div class="radio-wrapper">
+  <div class="radio-input">
+    <input
+      type="radio"
+      id="name"
+      name="sorting_order"
+      value="name"
+      (change)="onRadioChange($event)"
+    />
+    <label for="name">Sort by name</label><br />
+  </div>
+  <div class="radio-input">
+    <input
+      type="radio"
+      id="age"
+      name="sorting_order"
+      value="age"
+      (change)="onRadioChange($event)"
+    />
+    <label for="age">Sort by age</label><br />
+  </div>
+</div>
