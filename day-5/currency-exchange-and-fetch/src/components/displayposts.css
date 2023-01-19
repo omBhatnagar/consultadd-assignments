@@ -1,0 +1,30 @@
+.displayposts-wrapper {
+	width: 70%;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	height: 100vh;
+	max-height: 100vh;
+}
+
+.fetch-button {
+	margin-bottom: 2rem;
+}
+
+@media (max-width: 968px) {
+	.displayposts-wrapper {
+		width: 80%;
+	}
+}
+@media (max-width: 725px) {
+	.displayposts-wrapper {
+		width: 90%;
+	}
+	.displayposts-wrapper::after {
+		content: "";
+		clear: both;
+		display: table;
+	}
+}
