@@ -4,7 +4,7 @@ import PeopleTable from "./components/peopletable";
 import Radio from "./components/radio";
 
 function App() {
-	const [sorting, setSorting] = useState([]);
+	const [sorting, setSorting] = useState("");
 
 	return (
 		<div className='App'>
